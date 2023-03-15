@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.AddTaskFragment">
+
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:text="@string/cancel"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/done_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:paddingEnd="16dp"
+        android:text="@string/done"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/circle_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:padding="6dp"
+        android:src="@drawable/circle_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cancel_tv"
+        tools:ignore="ContentDescription" />
+
+
+    <EditText
+        android:id="@+id/task_title_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:gravity="start"
+        android:hint="@string/what_do_you_want_to_do"
+        android:maxLines="7"
+        android:textColor="@color/dark_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/circle_iv"
+        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintWidth_percent="0.7"
+        android:inputType="text"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/task_color_card"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="4dp"
+        app:cardBackgroundColor="@color/light_gray"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/task_title_et"
+        app:layout_constraintTop_toTopOf="@id/task_title_et" />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="6dp"
+        android:text=""
+        android:textColor="#9E9E9E"
+        app:layout_constraintStart_toStartOf="@id/task_title_et"
+        app:layout_constraintTop_toBottomOf="@id/task_title_et"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#9E9E9E"
+        app:layout_constraintBottom_toBottomOf="@id/date_tv"
+        app:layout_constraintStart_toEndOf="@id/date_tv"
+        app:layout_constraintTop_toTopOf="@id/date_tv" />
+
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/cons1">
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/task_title_et" />
+
+
+        <RadioGroup
+            android:id="@+id/parameters_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/divider_view">
+
+            <RadioButton
+                android:id="@+id/calendar_rb"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableEnd="@drawable/calendar_selector"
+                android:gravity="center"
+                android:tag="hello" />
+
+            <RadioButton
+                android:id="@+id/time_rb"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:drawableEnd="@drawable/alarm_selector"
+                android:gravity="center"
+                android:tag="world" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/task_type_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:button="@null"
+                android:checked="true"
+                android:drawableEnd="@drawable/circle_fill_shape"
+                android:drawablePadding="14dp"
+                android:drawableTint="@color/light_gray"
+                android:gravity="center_vertical"
+                android:tag="by"
+                android:text="@string/inbox"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.55">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasks_type_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.applandeo.materialcalendarview.CalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:eventsEnabled="true"
+            app:headerColor="@color/white"
+            app:headerLabelColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:selectionColor="@color/transparent"
+            app:selectionLabelColor="@color/blue"
+            app:todayLabelColor="@color/black"
+            app:type="one_day_picker" />
+
+
+        <LinearLayout
+            android:id="@+id/time_picker_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#F8F9FA"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.ycuwq.datepicker.time.HourAndMinutePicker
+                android:id="@+id/time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F8F9FA"
+                android:gravity="center"
+                app:itemTextSize="24sp"
+                android:scrollIndicators="start"
+                app:selectedTextSize="26sp"
+                app:zoomInSelectedItem="true"
+                app:selectedTextColor="@color/black"
+                app:wheelCurtainBorder="false" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

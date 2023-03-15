@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tasker</string>
+    <string name="lists">Lists</string>
+    <string name="nothing_to_do">Nothing to do</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="what_do_you_want_to_do">What do you want to do?</string>
+    <string name="inbox">Inbox</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="task">Task</string>
+    <string name="list">List</string>
+    <string name="delete">Delete</string>
+</resources>

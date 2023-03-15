@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/share"
+
+            android:icon="@drawable/share"
+            android:iconTint="@color/white"
+            android:orderInCategory="100"
+            app:tint="@color/white"
+            android:title="Share" />
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/star"
+            app:tint="@color/white"
+            android:orderInCategory="100"
+            android:title="Rate" />
+
+        <item
+            android:id="@+id/info"
+
+            android:icon="@drawable/info"
+            app:tint="@color/white"
+
+            android:orderInCategory="200"
+            android:title="Info" />
+
+
+    </group>
+
+</menu>

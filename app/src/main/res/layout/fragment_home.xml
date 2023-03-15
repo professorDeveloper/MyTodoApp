@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.azamovhudstc.playstoretodoapp.utils.AdvanceDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="true"
+    tools:context=".fragments.HomeFragment"
+    tools:openDrawer="end">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        style="@style/Widget.Custom.NavigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/defaultColor"
+        android:clipToPadding="false"
+
+        android:paddingStart="@dimen/margin_standard"
+        app:headerLayout="@layout/layout_header_nav"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/main" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:paddingHorizontal="14dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_menu"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginEnd="10dp"
+
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/today_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <TextView
+                    android:id="@+id/today_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:paddingVertical="20dp"
+                    android:saveEnabled="true"
+                    android:text="@string/today"
+
+                    android:textColor="@color/dark_gray"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/more_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_more_horiz_24"
+                    app:layout_constraintBottom_toBottomOf="@id/today_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/today_tv"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/actual_tasks_rv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/today_tv"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_actual_task" />
+
+                <TextView
+                    android:id="@+id/nothing_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/nothing_to_do"
+                    android:textColor="@color/gray"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:drawableTopCompat="@drawable/ic_baseline_self_improvement_24"
+                    app:layout_constraintBottom_toBottomOf="@id/actual_tasks_rv"
+                    app:layout_constraintEnd_toEndOf="@id/actual_tasks_rv"
+                    app:layout_constraintStart_toStartOf="@id/actual_tasks_rv"
+                    app:layout_constraintTop_toTopOf="@id/actual_tasks_rv" />
+
+
+                <TextView
+                    android:id="@+id/lists_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:paddingVertical="10dp"
+                    android:paddingStart="4dp"
+                    android:text="@string/lists"
+                    android:textColor="#80000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/actual_tasks_rv"
+                    tools:ignore="RtlSymmetry" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tasks_list_rv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/lists_tv"
+                    app:layout_constraintTop_toBottomOf="@id/lists_tv"
+                    app:layout_constraintVertical_bias="1"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_tasks_list" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:elevation="0dp"
+            app:borderWidth="0dp"
+            android:src="@drawable/ic_combined_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99"
+            app:tint="#006CFF" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.azamovhudstc.playstoretodoapp.utils.AdvanceDrawerLayout>
