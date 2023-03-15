@@ -23,6 +23,11 @@ I have built this application on MVC Android Pattern and used AlarmRecevier in i
 | Task Color | ![#696969](https://via.placeholder.com/10/696969?text=+) #696969 |
 | Drawer Color | ![#006CFF](https://via.placeholder.com/10/006CFF?text=+) #006CFF |
 
+## Find this repository useful? ❤️
+
+Support it by joining stargazers for this repository. ⭐
+
+Also, follow me on GitHub for my next creations! 🤩
 
 ## Tech Stack
 
