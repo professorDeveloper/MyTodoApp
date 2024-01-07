@@ -1,6 +1,9 @@
 
 ![Logo](https://user-images.githubusercontent.com/108933534/225403400-bbb63833-fed1-47b6-8b62-ced8ad74a49c.png)
-
+ <p align="center">
+   <a href="https://t.me/native_applications/85" ><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a> 
+   <a href="https://github.com/professorDeveloper/MyTodoApp/releases"><img src="https://img.shields.io/github/downloads/professorDeveloper/MyTodoApp/total?color=%233DDC84&logo=android&logoColor=%23fff&style=for-the-badge"></a>
+</p>
 
 ## Features
 
